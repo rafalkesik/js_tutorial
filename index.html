@@ -1,4 +1,4 @@
-<!-- Code ready for lesson 2.4 -->
+<!-- Code ready for lesson 5.2 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Enough JavaScript</title>
     <script>
-        alert("hello, world");
+        const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let now = new Date();
+        let dayName = daysOfTheWeek[now.getDay()];
+        alert(`Hello, world! Happy ${dayName}.`);
         // let firstName = "Rafał"
         // let lastName = "Kęsik"
         // console.log("This page contains a friendly greeting.");

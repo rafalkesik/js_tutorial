@@ -1,4 +1,4 @@
-<!-- Code ready for lesson 5.2 -->
+<!-- Code ready for lesson 6.2 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Enough JavaScript</title>
-    <script>
-        const daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    <script src="day.js"></script>
+    <script>        
         let now = new Date();
-        let dayName = daysOfTheWeek[now.getDay()];
-        alert(`Hello, world! Happy ${dayName}.`);
+        alert(greeting(now));
+        // alert(`Hello, world! Happy ${dayName(now)}!`);
         // let firstName = "Rafał"
         // let lastName = "Kęsik"
         // console.log("This page contains a friendly greeting.");

@@ -3,11 +3,12 @@ let Phrase = require("rafalkesik-palindrome");
 function palindromeTester() {
     let string = prompt("Please enter a string for palindrome testing:");
     let phrase = new Phrase(string);
+    let palindromeResult = document.querySelector("#palindromeResult");
 
     if (phrase.palindrome()) {
-        alert(`${phrase.content} is a palindrome!`);
+        palindromeResult.innerHTML = `"<b>${phrase.content}</b>" is a palindrome!`;
     } else {
-        alert(`${phrase.content} is not a palindrome.`);
+        palindromeResult.innerHTML = `"<b>${phrase.content}</b>" is not a palindrome.`;
     }
 }
 

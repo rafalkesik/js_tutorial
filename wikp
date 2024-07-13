@@ -1,0 +1,36 @@
+#!/Users/rafalkesik/.nvm/versions/node/v22.4.0/bin/node
+
+// Returns the paragraphs from a Wikipedia link, stripped of reference numbers.
+
+let urllib = require("urllib");
+let url = process.argv[2];
+if (!url) {
+    console.log("You have to add a link after the command.");
+    process.exit();
+}
+
+const HTMLParser = require("node-html-parser");
+
+let dummyMethod = async () => {
+    const { data } = await urllib.request(url);
+    const body = data.toString();
+    // Simulate a Document Object Model.
+    // let { document } = (new HTMLElement(body)).window
+    let document = HTMLParser.parse(body);
+
+    // Grab all the paragraphs and references.
+    let paragraphs = document.querySelectorAll("p");
+    let references = document.querySelectorAll(".reference");
+
+    // Remove any references.
+    references.forEach(function(reference) {
+        reference.remove();
+    });
+
+    // Print out all of the paragraphs.
+    paragraphs.forEach(function(paragraph) {
+        console.log(paragraph.textContent);
+    });
+}
+
+dummyMethod();

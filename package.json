@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "node-html-parser": "^6.1.13",
     "rafalkesik-palindrome": "^0.1.0",
     "urllib": "^4.2.0"
   }

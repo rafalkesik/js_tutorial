@@ -1,0 +1,23 @@
+#!/Users/rafalkesik/.nvm/versions/node/v22.4.0/bin/node
+
+let urllib = require("urllib");
+let Phrase = require("rafalkesik-palindrome");
+let url = "https://cdn.learnenough.com/phrases.txt";
+let palindromes = [];
+
+let dummyMethod = async () => {
+    const { data } = await urllib.request(url);
+    const body = data.toString();
+
+    body.split("\n").forEach(function(line) {
+        let phrase = new Phrase(line);
+        if (phrase.palindrome()) {
+            console.log("palindrome detected:", line);
+        }
+    });
+
+    palindromes = body.split("\n").filter(line => new Phrase(line).palindrome());
+    console.log(palindromes);
+}
+
+dummyMethod();
